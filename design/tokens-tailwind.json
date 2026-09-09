@@ -1,0 +1,34 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "bg": {
+          "primary": "#12141C",
+          "surface": "#1C1F2B",
+          "surface-raised": "#242838"
+        },
+        "border": {
+          "subtle": "#2E3346"
+        },
+        "text": {
+          "primary": "#F1F2F6",
+          "muted": "#8B90A3"
+        },
+        "state": {
+          "healthy": "#4ADE80",
+          "wounded": "#FBBF24",
+          "critical": "#F87171",
+          "dying": "#7C1D2E",
+          "buff": "#38BDF8",
+          "debuff": "#C084FC"
+        },
+        "accent": {
+          "turn": "#FACC15"
+        }
+      },
+      "fontFamily": {
+        "sans": ["Inter", "sans-serif"]
+      }
+    }
+  }
+}
