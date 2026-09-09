@@ -1,0 +1,36 @@
+# Lucide Icons — D&D Wireframes
+
+Fonctionnelles uniquement (pas de décoratives)
+
+CA/Defense:
+- Shield (CA totale/contact/dépourvu)
+
+Combat/Initiative:
+- Dices (jets, initiative)
+- Clock (tour, initiative)
+- Zap (actions rapides)
+
+Armes:
+- Sword (arme corps-à-corps)
+- Crosshair (arme distance)
+
+Stats/Compétences:
+- Eye (Détection / perception)
+- Magnifying Glass (Fouille)
+- Brain (Psychologie)
+
+Resources:
+- Heart (PV)
+- Flame (Ressources/capacités)
+- Package (Charges)
+
+Navigation:
+- ChevronRight (actions)
+- X (fermer)
+- Menu (nav if needed)
+- Settings (config)
+
+Status/States:
+- AlertTriangle (Statut négatif)
+- CheckCircle (Statut positif)
+- XCircle (Inconscient/Mort)
