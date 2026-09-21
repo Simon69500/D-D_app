@@ -1,55 +1,53 @@
-# Design System — D&D Wireframes
+# Design System — D&D Ops
 
-## Charte Graphique
+## 1. Charte Graphique
 
-### Dark Mode Natif
-Unique mode (pas de light mode option).
+### Dark Mode natif
+Non optionnel. Pensé pour un usage en conditions de faible luminosité 
+(sessions de jeu en soirée).
 
 ### Palette
-Voir `colors.json`
+Voir `colors.json` pour le détail complet (hex + usage + règles de non-collision).
 
 ### Typographies
-- Font: Inter (Variable, Regular à SemiBold)
-- Min 16px pour texte interactif (mobile)
-- Valeurs chiffrées: tabulaires, chasse resserrée
+- Police unique : **Inter** (variable, Regular à SemiBold) — limite le poids 
+  de chargement et la complexité d'intégration
+- Valeurs chiffrées dynamiques (PV, CA, bonus d'attaque, BBA) : variante à 
+  chasse resserrée, chiffres tabulaires — affichage stable lors des mises 
+  à jour temps réel
+- Taille minimale : **16px** pour tout élément de texte interactif sur mobile
 
 ### Iconographie
-Lucide Icons — voir `icons-lucide.txt`
+- Bibliothèque : **Lucide Icons** (pack libre et statique, conforme à la 
+  contrainte d'absence d'API tierce payante ou d'IA en V1)
+- Usage strictement fonctionnel : un pictogramme = une seule notion dans 
+  toute l'application
+- Aucune icône décorative (préserve la lisibilité de la Grid MJ en 
+  configuration dense — US-07 CA-03)
 
-## Layout
+**Mapping conceptuel (noms d'icônes Lucide à préciser à l'usage) :**
+| Notion | Concept |
+|---|---|
+| Classe d'Armure (CA) | bouclier |
+| Jet de dé / initiative | dé |
+| Arme | épée |
+| Compétence passive | œil |
+| Statut préjudiciable | éclair |
 
-### Breakpoints
-- Mobile: 375px (Dashboard Joueur ref)
-- Tablet: 1024px (Dashboard MJ responsive)
-- Desktop: 1440px (Dashboard MJ ref)
+## 2. Design System Tokens (Tailwind CSS)
 
-### Grille MJ
-```css
-grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
-```
+Voir `tokens-tailwind.json` pour la structure complète.
 
-### Responsivité
-Aucune navigation persistante.
-Règle des 10 secondes (info vitale en < 1 tap).
+**Principe directeur :** aucune couleur n'est utilisée "en dur" dans les 
+composants ; toute référence passe par un token nommé (ex. `bg-state-critical`, 
+`text-accent-turn`), garantissant un point de vérité unique pour toute 
+évolution future de la charte.
 
-## Tokens Tailwind
-Voir `tokens-tailwind.json`
-
-Usage:
-```jsx
-<div className="bg-bg-primary text-text-primary">
-  <div className="border border-border-subtle rounded">
-    <span className="text-state-healthy">Saine</span>
-  </div>
-</div>
-```
-
-## Écrans (Phase 3.1 — Basse Fidélité)
-
-1. Dashboard Joueur (mobile 375px)
-2. Dashboard MJ (desktop 1440px / tablet 1024px)
-3. Modale Vue Détaillée (overlay)
-4. Formulaire Création Personnage (mobile 375px)
-5. Écrans d'Entrée (Accueil/Connexion)
-
-Wireframes = noir & blanc strict (couleur appliquée en Phase 3.2).
+Groupes de tokens :
+- `colors.bg` : primary, surface, surface-raised
+- `colors.border` : subtle
+- `colors.text` : primary, muted
+- `colors.state` : healthy, wounded, critical, dying, buff, debuff
+- `colors.accent` : turn
+- `fontFamily.sans` : Inter
+- `fontSize` : stat-lg, stat-md (tailles dédiées aux valeurs chiffrées clés)
