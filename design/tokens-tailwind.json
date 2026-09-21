@@ -28,7 +28,12 @@
       },
       "fontFamily": {
         "sans": ["Inter", "sans-serif"]
+      },
+      "fontSize": {
+        "stat-lg": ["1.5rem", { "lineHeight": "1.2", "fontWeight": "600", "fontFeatureSettings": "'tnum'" }],
+        "stat-md": ["1.125rem", { "lineHeight": "1.2", "fontWeight": "600", "fontFeatureSettings": "'tnum'" }]
       }
     }
-  }
+  },
+  "principle": "Aucune couleur n'est utilisée 'en dur' dans les composants ; toute référence de couleur passe par un token nommé (ex. bg-state-critical, text-accent-turn), garantissant un point de vérité unique pour toute évolution future de la charte."
 }
